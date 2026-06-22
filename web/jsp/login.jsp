@@ -55,8 +55,8 @@
                                 <div class="mb-3 input-group">
                                     <span class="input-group-text bg-white"><i class="fas fa-user-tag text-muted"></i></span>
                                     <select name="role" class="form-select" required>
-                                        <option value="3" selected>Khách hàng (Customer)</option>
-                                        <option value="4">Giám Đốc (Director)</option>
+                                        <option value="3" selected>Khách hàng</option>
+                                        <option value="4">Giám Đốc</option>
                                         <option value="1">Admin</option>
                                     </select>
                                 </div>
@@ -81,7 +81,7 @@
                                     </label>
                                 </div>
                                 <div class="d-flex justify-content-between mb-4 small">
-                                    <a href="${pageContext.request.contextPath}/dispatchcontroller?button=ForgotPage" class="text-decoration-none fw-bold">Quên mật khẩu?</a>
+                                    <a href="${pageContext.request.contextPath}/dispatchcontroller?button=ForgotPage" class="text-decoration-none fw-bold">Quên mật khẩu?- Hãy ấn vào đây</a>
                                     <a href="${pageContext.request.contextPath}/dispatchcontroller?button=RegisterEmail" class="text-decoration-none fw-bold">Đăng ký</a>
                                 </div>
 
