@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard Quan tri</title>
+        <title>Dashboard Quản Trị</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin_dashboard.css?v=2026550307b">
@@ -32,7 +32,7 @@
                 <div class="col-md-4">
                     <div class="card metric-card text-bg-primary mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Tổng người dùng</h5>
+                            <h5 class="card-title">Tổng người</h5>
                             <p class="card-text fs-3">${stats.totalUsers}</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                 <div class="col-md-4">
                     <div class="card metric-card text-bg-success mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Tổng đơn hàng</h5>
+                            <h5 class="card-title">Tổng đơn </h5>
                             <p class="card-text fs-3">${stats.totalOrders}</p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
 
             <div class="card mt-3">
                 <div class="card-body">
-                    <h5 class="card-title">Số đơn theo tháng (toàn hệ thống)</h5>
+                    <h5 class="card-title">Số đơn theo tháng</h5>
                     <canvas id="ordersChart" height="80"></canvas>
                 </div>
             </div>
