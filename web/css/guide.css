@@ -1,0 +1,107 @@
+/* ==========================================================================
+   TÙY CHỈNH HƯỚNG DẪN MUA HÀNG (BOOTSTRAP 5 OVERRIDE)
+   ========================================================================== */
+
+/* 1. Làm đẹp Card chứa nội dung */
+.container.my-5 .card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); /* Đổ bóng mềm mại */
+    overflow: hidden;
+}
+
+.container.my-5 .card-body {
+    padding: 3.5rem 4rem;
+}
+
+/* 2. Tiêu đề trang (H1) */
+.container.my-5 h1.mb-4 {
+    font-weight: 800;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 3rem !important;
+    position: relative;
+    letter-spacing: -0.02em;
+}
+
+/* Gạch chân trang trí dưới Tiêu đề */
+.container.my-5 h1.mb-4::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    margin: 16px auto 0;
+    border-radius: 4px;
+}
+
+/* 3. Khối nội dung Hướng dẫn (#guideContent) */
+#guideContent {
+    color: #475569;
+}
+
+/* Style cho các thẻ Tiêu đề Bước (H4) */
+#guideContent h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    background: #f8fafc;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #3b82f6; /* Điểm nhấn màu xanh */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+#guideContent h4:hover {
+    background: #eff6ff;
+    transform: translateX(5px); /* Hiệu ứng đẩy nhẹ sang phải khi di chuột */
+}
+
+/* Style cho các Đoạn văn mô tả (P) - Tạo hiệu ứng Timeline */
+#guideContent p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    padding-left: 28px;
+    margin-left: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 2px dashed #cbd5e1; /* Đường gạch nối giữa các bước */
+}
+
+/* Ẩn đường gạch nối ở đoạn văn cuối cùng (trước hộp alert) */
+#guideContent p:last-of-type {
+    border-left-color: transparent;
+}
+
+/* 4. Tùy chỉnh Hộp Lưu ý (Alert Box) */
+#guideContent .alert-info {
+    background-color: #fff1f2;
+    border-color: #ffe4e6;
+    color: #9f1239;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 5px solid #e11d48; /* Đổi sang tone đỏ/hồng cho cảnh báo */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#guideContent .alert-info strong {
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   RESPONSIVE (Cho màn hình nhỏ)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container.my-5 .card-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    #guideContent p {
+        padding-left: 20px;
+        margin-left: 8px;
+    }
+}

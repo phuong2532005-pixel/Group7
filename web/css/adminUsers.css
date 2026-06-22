@@ -1,0 +1,292 @@
+/* =========================================================
+   ADMIN USERS - COMPACT SOFT UI (FULL SETTINGS)
+========================================================== */
+
+:root {
+    /* --navy-main: #16169c; */
+    /* --soft-bg: #f8fafc; */
+    /* --text-dark: #0f172a; */
+    /* --text-gray: #64748b; */
+}
+
+body.admin-users-page {
+    background-color: #f1f5f9;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+/* 1. HERO SECTION - NỔI KHỐI TRẮNG (ĐANG ĐẸP) */
+.admin-users-hero {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    border: 1px solid #f1f5f9;
+}
+
+.hero-eyebrow {
+    color: #16169c;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+
+.admin-users-hero h1 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+}
+
+.admin-users-hero p {
+    color: #64748b;
+    margin: 0;
+    font-size: 0.95rem;
+    max-width: 600px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-link {
+    background-color: #f8fafc;
+    color: #16169c;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.hero-link:hover {
+    background-color: #16169c;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(22, 22, 156, 0.15);
+}
+
+/* 2. Summary Cards */
+.admin-users-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: white;
+    padding: 20px;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #e2e8f0;
+}
+
+.summary-card strong {
+    font-size: 1.4rem;
+    color: #16169c;
+}
+
+/* 3. Form & Filter Cards - CẤU TRÚC CHUNG */
+.card.form-card, .card.filter-card, .card.table-card {
+    background: white;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 1.5rem !important;
+    padding: 25px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+}
+
+.section-kicker {
+    color: #16169c;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Form Inputs & Selects */
+.admin-users-page input, .admin-users-page select {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 8px 12px;  
+    font-size: 0.9rem;  
+    border-radius: 0.75rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.admin-users-page input:focus, .admin-users-page select:focus {
+    border-color: #16169c;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(22, 22, 156, 0.1);
+}
+
+/* 4. CHỈNH NÚT "TẠO USER" & "LỌC" MÀU TRẮNG (OUTLINE BUTTON) */
+.btn-primary, .btn-filter {
+    background: #ffffff !important; /* Nền trắng tinh */
+    color: #16169c !important; /* Chữ màu xanh Navy */
+    border: 2px solid #16169c !important; /* Viền xanh Navy dày 2px */
+    padding: 6px 18px !important;
+    font-size: 0.85rem;
+    border-radius: 0.6rem !important;
+    border-radius: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s !important;
+}
+
+.btn-primary:hover, .btn-filter:hover {
+    background: #16169c !important; /* Hover vào đổi sang nền xanh */
+    color: #ffffff !important; /* Hover vào chữ chuyển trắng */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(22, 22, 156, 0.2);
+}
+
+/* 5. Table Styling */
+.user-table thead th {
+    background: #f1f5f9;
+    padding: 15px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.user-table tbody td {
+    background: white;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Status Chips */
+.status-chip {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-active { background: #dcfce7; color: #166534; }
+.status-inactive { background: #fee2e2; color: #991b1b; }
+
+.status-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.status-action-form {
+    margin: 0;
+}
+
+.status-action-btn {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.status-action-btn.btn-ban {
+    background: #fff1f2;
+    color: #be123c;
+    border-color: #fecdd3;
+}
+
+.status-action-btn.btn-ban:hover {
+    background: #ffe4e6;
+}
+
+.status-action-btn.btn-unban {
+    background: #ecfdf5;
+    color: #065f46;
+    border-color: #bbf7d0;
+}
+
+.status-action-btn.btn-unban:hover {
+    background: #d1fae5;
+}
+
+.status-self-note {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* 6. Pagination - Giữ hàng ngang */
+.pagination {
+    display: flex !important;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.pagination a.active {
+    background: #16169c;
+    color: white;
+    border-color: #16169c;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;   /* 👈 khoảng cách ngang + dọc */
+    margin-bottom: 20px;
+}
+.filter-inline-form {
+    display: flex;
+    gap: 25px;  
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.combined-separator {
+    margin: 20px 0 24px;
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+}
+.form-card button {
+    margin-top: 15px;   /* 👈 tránh dính input cuối */
+}
+/* SHOP FIELDS SPACING FIX */
+.shop-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;              /* 👈 khoảng cách ngang + dọc */
+    margin-top: 15px;       /* 👈 cách phần trên */
+}
+
+/* đảm bảo input không dính */
+.shop-box input,
+.shop-box select {
+    width: 100%;
+}

@@ -1,0 +1,106 @@
+/* =========================================================
+   LOGIN - COMPACT SOFT UI (ĐỒNG BỘ DỰ ÁN)
+========================================================== */
+
+.login-box-limit {
+    width: 100%;
+    max-width: 380px; /* Thu nhỏ độ rộng tổng thể */
+    margin: 60px auto;   
+}
+
+.login-card {
+    border: none !important; 
+    border-radius: 2rem !important; 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
+    background: #ffffff !important;
+    padding: 15px !important;
+}
+
+/* Icon mặt cười chính giữa */
+.login-icon-top {
+    width: 50px;
+    height: 50px;
+    background: #f0f0ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto; /* Căn giữa bằng margin auto */
+}
+
+.login-card h3 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #16169c !important;
+    text-transform: none; /* Giữ chữ thường cho mềm mại giống ảnh mẫu */
+}
+
+/* --- Khung nhập nhỏ lại --- */
+.input-group {
+    border: 1px solid #eef2f6 !important;
+    background-color: #f8fafc !important;
+    border-radius: 0.75rem !important; /* Bo tròn nhỏ hơn cho gọn */
+    margin-bottom: 0.75rem !important; /* Giảm khoảng cách giữa các ô */
+    padding: 0 8px !important;
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+    border-color: #16169c !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 1px #16169c;
+}
+
+/* Thu nhỏ size chữ và độ cao của input/select */
+.form-control, .form-select {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 8px 10px !important; /* Giảm padding cho khung nhỏ lại */
+    font-size: 0.85rem !important; /* Chữ nhỏ lại */
+}
+
+.input-group-text {
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    font-size: 0.9rem;
+}
+
+/* --- Nút bấm nhỏ gọn --- */
+.btn-login-orange {
+    background-color: #16169c !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 10px !important; /* Nút nhỏ lại */
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* --- XỬ LÝ KHUNG LỖI --- */
+.error-box {
+    display: none; 
+    background-color: #fef2f2 !important; 
+    color: #ef4444 !important;
+    border: 1px solid #fecaca !important;
+    border-radius: 12px !important; 
+    padding: 12px 15px !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px !important;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.has-error .error-box { display: flex; }
+.error-box:empty, .error-box span:empty { display: none !important; }
+
+/* Báo đỏ ô nhập khi có lỗi */
+.has-error.input-group {
+    border-color: #ef4444 !important;
+    background-color: #fff !important;
+}
+.has-error .input-group-text { color: #ef4444 !important; }

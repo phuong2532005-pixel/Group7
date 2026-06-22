@@ -1,0 +1,164 @@
+/* =========================================================
+   AI CHATBOT - SOFT UI (NÚT GỬI NGANG DÒNG INPUT)
+========================================================== */
+
+:root {
+    /* --navy-primary: #16169c; */
+    /* --chat-bg: #f8fafc; */
+    /* --msg-user: #16169c; */
+    /* --msg-ai: #ffffff; */
+}
+
+body {
+    background-color: #f1f5f9;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 1. Container chính */
+.chatbot-container {
+    max-width: 900px;
+    height: 90vh;
+    margin: 5vh auto;
+    background: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 2. Header */
+.chat-header {
+    background: #16169c;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.chat-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-back {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+/* 3. Khu vực tin nhắn */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8fafc;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.message-user {
+    align-self: flex-end;
+    background-color: #16169c;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message-ai {
+    align-self: flex-start;
+    background-color: white;
+    border: 1px solid #eef2f6;
+    border-bottom-left-radius: 4px;
+}
+
+.info-message {
+    align-self: center;
+    font-size: 0.8rem;
+    color: #64748b;
+    background: rgba(0,0,0,0.05);
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+/* 4. CHỈNH NÚT GỬI NGANG DÒNG INPUT */
+.chat-input-area {
+    padding: 20px 25px;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+}
+
+.input-group {
+    display: flex !important;
+    align-items: flex-end !important; /* Căn nút bám theo đáy khi textarea giãn ra */
+    gap: 12px;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Khung bọc riêng Textarea để tạo hiệu ứng bo góc Soft UI */
+#messageInput {
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.2rem;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    outline: none;
+    resize: none;
+    transition: all 0.3s ease;
+    min-height: 48px;
+    max-height: 150px;
+    line-height: 1.5;
+}
+
+#messageInput:focus {
+    border-color: #16169c;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(22, 22, 156, 0.08);
+}
+
+/* Nút gửi nằm ngang hàng */
+.btn-send {
+    width: 48px;
+    height: 48px;
+    background-color: #16169c !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important; /* Nút gửi hình tròn cho hiện đại */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Không cho nút bị bóp méo */
+    margin-bottom: 2px; /* Căn chỉnh nhẹ để khớp với dòng cuối của input */
+}
+
+.btn-send:hover {
+    transform: scale(1.08);
+    background-color: #0d0d7a !important;
+}
+
+.btn-send i {
+    font-size: 1.1rem;
+    margin-left: 2px; /* Đẩy nhẹ icon sang phải cho cân tâm */
+}

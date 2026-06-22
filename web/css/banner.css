@@ -1,0 +1,118 @@
+/* =========================================================
+   HIGH-END BANNER (banner.css)
+   Font: gg-sans | Style: Editorial Minimalist
+   ========================================================= */
+
+.simple-banner {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Độ cao lớn tạo cảm giác sang trọng */
+    min-height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #000; /* Nền đen để tránh lộ khoảng trắng khi trượt */
+}
+
+.slide-track {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1); /* Chuyển cảnh siêu mượt */
+}
+
+.slide-item {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Phủ kín khung hình */
+    display: block;
+    filter: brightness(0.9); /* Hơi tối nhẹ để tăng chiều sâu */
+}
+
+/* --- Logic Chuyển Slide (CSS Only) --- */
+#s-1:checked ~ .slide-track { transform: translateX(0%); }
+#s-2:checked ~ .slide-track { transform: translateX(-20%); }
+#s-3:checked ~ .slide-track { transform: translateX(-40%); }
+#s-4:checked ~ .slide-track { transform: translateX(-60%); }
+#s-5:checked ~ .slide-track { transform: translateX(-80%); }
+
+/* --- Mũi tên điều hướng hình tròn --- */
+.nav-arrows .prev, .nav-arrows .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.15); /* Nền mờ ảo */
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 50%; /* Ép thành hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+/* Dùng FontAwesome để vẽ hình mũi tên sắc nét */
+.nav-arrows .prev::before, .nav-arrows .next::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1rem;
+}
+.nav-arrows .prev::before { content: "\f053"; } /* Icon < */
+.nav-arrows .next::before { content: "\f054"; } /* Icon > */
+
+.nav-arrows .prev:hover, .nav-arrows .next:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.nav-arrows .prev { left: 4%; }
+.nav-arrows .next { right: 4%; }
+
+/* --- Dots dạng vạch ngang (Dashes) --- */
+.dots-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+}
+
+.dot {
+    width: 40px; /* Vạch ngang dài */
+    height: 2px; /* Độ mỏng thanh lịch */
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 0; /* Vuông vức */
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Hiệu ứng khi Slide được chọn */
+#s-1:checked ~ .dots-container label:nth-child(1),
+#s-2:checked ~ .dots-container label:nth-child(2),
+#s-3:checked ~ .dots-container label:nth-child(3),
+#s-4:checked ~ .dots-container label:nth-child(4),
+#s-5:checked ~ .dots-container label:nth-child(5) {
+    background: white;
+    width: 60px; /* Vạch active dài ra thêm */
+}
+
+/* Ẩn nội dung chữ mặc định của label nếu có */
+.dot { font-size: 0; }

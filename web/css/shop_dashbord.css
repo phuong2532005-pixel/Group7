@@ -1,0 +1,117 @@
+/* =========================================================
+   SHOP DASHBOARD - COMPACT SOFT UI & NAVY STYLE
+========================================================== */
+
+/* 1. Tổng thể container */
+.container.mt-4 {
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+/* 2. Thẻ lọc báo cáo (Filter Card) */
+.report-filter-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(22, 22, 156, 0.05);
+    margin-bottom: 2rem;
+    border: 1px solid #f1f5f9;
+}
+
+.report-filter-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #16169c;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.report-filter-card label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Tinh chỉnh Input & Select trong Dashboard */
+.report-filter-card .form-control, 
+.report-filter-card .form-select {
+    border-radius: 0.75rem !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 10px 15px !important;
+    font-size: 0.9rem;
+    background-color: #f8fafc !important;
+}
+
+.report-filter-card .form-control:focus, 
+.report-filter-card .form-select:focus {
+    border-color: #16169c !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(22, 22, 156, 0.1) !important;
+}
+
+/* Nút Hiển thị báo cáo */
+.btn-primary {
+    background-color: #16169c !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 12px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(22, 22, 156, 0.3);
+}
+
+/* 3. Thẻ Card chứa biểu đồ (Chart Cards) */
+.card {
+    border: none !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.3s ease;
+    background: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.h5-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-left: 4px solid #16169c;
+    padding-left: 12px;
+}
+
+/* 4. Chỉ số tổng hợp (Total stats) */
+#totalRevenue, #totalOrders {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #16169c;
+}
+
+.mt-2 strong {
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* 5. Responsive cho Chart */
+canvas {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .report-filter-card {
+        padding: 15px;
+    }
+    .h5-title {
+        font-size: 1rem;
+    }
+}

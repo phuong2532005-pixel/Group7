@@ -1,0 +1,355 @@
+/* ==========================================================================
+   FASHION STORE - TRANG THANH TOÁN (CHECKOUT UI)
+   ========================================================================== */
+
+/* 1. Bố cục tổng thể */
+.checkout-wrap {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+/* Chia 2 cột: Form (60%) - Giỏ hàng (40%) */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* 2. Khung viền (Panels) */
+.panel {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f8fafc;
+}
+
+.panel h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f1f5f9;
+    color: #0f172a;
+}
+
+/* 3. Khối Thông báo (Alerts) */
+.notice, .error {
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.notice { background: #ecfdf5; color: #047857; border-left: 5px solid #10b981; }
+.error { background: #fff1f2; color: #be123c; border-left: 5px solid #e11d48; }
+
+/* 4. Form Fields (Ô nhập liệu) */
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+.field input[type="text"], 
+.field select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #334155;
+    background-color: #fff;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.field input:focus, 
+.field select:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.field input[readonly], 
+.field select:disabled {
+    background-color: #f8fafc;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* 5. Khối Địa chỉ Giao hàng (Style Shopee/Tiki) */
+.checkout-address-box {
+    border: 2px dashed #3b82f6;
+    border-radius: 12px;
+    padding: 24px;
+    background: #eff6ff;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.checkout-address-title {
+    font-weight: 700;
+    color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+
+.checkout-address-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.checkout-address-contact { font-weight: 700; color: #0f172a; }
+.checkout-address-text { color: #334155; }
+
+.checkout-address-badge {
+    background: #3b82f6;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.checkout-address-change {
+    margin-left: auto;
+    color: #2563eb;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.checkout-address-change:hover { background: #dbeafe; }
+
+/* Khối nhập địa chỉ mới (Ẩn/Hiện bằng JS) */
+.checkout-new-address-wrap {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #cbd5e1;
+    display: none; /* JS của bạn sẽ thay đổi cái này */
+}
+
+/* 6. Modal Chọn Địa Chỉ */
+.checkout-address-modal {
+    display: none; /* Thêm class 'active' bằng JS để hiện */
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.checkout-address-modal.active { display: flex; }
+
+.checkout-address-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.checkout-address-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.checkout-address-modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #94a3b8;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.checkout-address-modal-close:hover { color: #ef4444; }
+
+.checkout-address-modal-body {
+    padding: 10px 24px;
+    overflow-y: auto;
+}
+
+.checkout-address-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+}
+
+.checkout-address-item:last-child { border-bottom: none; }
+
+.checkout-address-item-radio { margin-top: 2px; }
+
+.checkout-address-item-top {
+    margin-bottom: 6px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.checkout-address-item-name { font-weight: 700; color: #0f172a; }
+.checkout-address-item-phone { color: #64748b; font-size: 0.95rem; }
+.checkout-address-item-line { color: #475569; font-size: 0.95rem; margin-bottom: 4px; }
+
+.checkout-address-modal-actions {
+    padding: 20px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 16px;
+}
+
+.checkout-address-add-btn {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: 0.2s;
+}
+.checkout-address-add-btn:hover { border-color: #94a3b8; background: #f1f5f9; }
+
+.checkout-address-confirm-btn {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: 0.2s;
+}
+.checkout-address-confirm-btn:hover { background: #2563eb; }
+
+/* 7. Khối Tóm tắt Đơn hàng & Nút Thanh Toán */
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.item-row span:last-child {
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+    margin-left: 16px;
+}
+
+.summary-total {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #e11d48; /* Tone đỏ nổi bật cho tổng tiền */
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 2px solid #f1f5f9;
+}
+
+.summary-total::before {
+    content: 'Thành tiền:';
+    color: #0f172a;
+    font-size: 1.1rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #0f172a; /* Nút đen tuyền sang trọng */
+    color: #ffffff;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 32px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.2);
+}
+
+.checkout-btn:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* ==========================================================================
+   RESPONSIVE (Cho màn hình Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .checkout-grid {
+        grid-template-columns: 1fr; /* Tràn thành 1 cột */
+    }
+    
+    .checkout-address-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .checkout-address-change {
+        margin-left: 0;
+        align-self: flex-start;
+        padding-left: 0;
+    }
+    
+    .panel { padding: 24px 20px; }
+}

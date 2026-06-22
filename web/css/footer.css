@@ -1,0 +1,111 @@
+/* =========================================
+   Layout Footer Tổng Thể
+   ========================================= */
+.site-footer {
+    background-color: #0f172a; /* Nền xám đen đậm, rất sang trọng */
+    color: #f8fafc; /* Chữ trắng sáng */
+    padding: 80px 5% 20px; /* Cách trên 80px, dưới 20px, 2 bên 5% */
+    margin-top: 60px; /* Đẩy footer cách xa phần nội dung bên trên */
+}
+
+/* =========================================
+   Lưới chứa nội dung (Grid Layout)
+   ========================================= */
+.footer-grid {
+    display: grid;
+    /* Chia làm 4 cột: cột đầu tiên to gấp rưỡi các cột sau */
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+/* =========================================
+   Cột 1: Thông tin thương hiệu
+   ========================================= */
+.footer-brand .footer-logo {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: #94a3b8; /* Chữ xám nhạt */
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 80%;
+}
+
+/* =========================================
+   Cột 2, 3, 4: Link và Liên hệ
+   ========================================= */
+.footer-links h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.footer-links a, 
+.footer-links span {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi rê chuột vào link */
+.footer-links a:hover {
+    color: #ffffff; /* Sáng lên */
+    transform: translateX(5px); /* Trượt nhẹ sang phải một chút */
+}
+
+/* =========================================
+   Phần Dưới Cùng: Copyright
+   ========================================= */
+.footer-bottom {
+    border-top: 1px solid #1e293b; /* Đường kẻ ngang mờ */
+    padding-top: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================================
+   Responsive: Giao diện cho Điện thoại & Tablet
+   ========================================= */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* Màn hình vừa: chia 2 cột */
+    }
+    .footer-brand {
+        grid-column: span 2; /* Cột logo chiếm cả 2 cột trên cùng */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Màn hình nhỏ (điện thoại): 1 cột xếp chồng */
+        gap: 30px;
+    }
+    .footer-brand {
+        grid-column: span 1;
+    }
+    .footer-brand p {
+        max-width: 100%;
+    }
+    .site-footer {
+        padding: 60px 20px 20px;
+    }
+}

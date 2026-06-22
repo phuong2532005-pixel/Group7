@@ -1,0 +1,224 @@
+/* =========================================================
+   REGISTER - COMPACT SOFT UI (ĐỒNG BỘ VỚI LOGIN)
+========================================================== */
+
+.login-box-limit {
+    width: 100%;
+    max-width: 420px; /* unify size */
+    margin: 40px auto;   
+    min-height: 620px;
+}
+
+/* reduce space below title */
+.login-card .card-body .text-center {
+    margin-bottom: 1.5rem !important;
+}
+
+/* placeholder spacing for email input */
+.input-email-group .form-control::placeholder {
+    letter-spacing: normal !important;
+}
+/* text entered should not be spaced out */
+.input-email-group .form-control {
+    letter-spacing: normal !important;
+}
+
+.login-card {
+    border: none !important; 
+    border-radius: 2rem !important; 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
+    background: #ffffff !important;
+    padding: 20px !important;
+}
+
+.login-card h4 {
+    font-size: 1.4rem !important;
+    color: #16169c !important;
+    letter-spacing: 1px;
+}
+
+/* --- Tinh chỉnh nhãn (Label) cho nhỏ và chuyên nghiệp --- */
+label.small {
+    font-size: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-left: 10px;
+    /* Đã thêm sans-serif làm dự phòng để tránh lỗi font có chân */
+    font-family: 'Google Sans', Arial, sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* --- Khung nhập liệu Soft UI --- */
+.form-control-soft, .input-group {
+    border: 1px solid #eef2f6 !important;
+    background-color: #f8fafc !important;
+    border-radius: 0.75rem !important;
+    padding: 4px 12px !important;
+    font-size: 0.85rem !important;
+    transition: all 0.3s ease;
+    /* Đã thêm sans-serif làm dự phòng */
+    font-family: 'Google Sans', Arial, sans-serif !important;
+    letter-spacing: normal !important; /* Đảm bảo khoảng cách chữ bình thường */
+    text-align: left !important; /* Trả lại căn trái cho input thường */
+}
+
+.input-group {
+    padding: 0 8px !important; /* Riêng group chứa mắt thần thì padding ít hơn */
+    display: flex;
+    align-items: center;
+}
+
+.input-group .form-control-soft {
+    border: none !important;
+    background: transparent !important;
+    padding: 8px 5px !important;
+}
+
+/* Hiệu ứng Focus */
+.form-control-soft:focus, .input-group:focus-within {
+    border-color: #16169c !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 1px #16169c;
+    outline: none;
+}
+
+/* Icon mắt và icon gợi ý */
+.input-group-text {
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+/* --- Danh sách kiểm tra mật khẩu (Validation) --- */
+.validation-list {
+    list-style: none;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 1rem;
+    margin-top: 15px;
+}
+
+.validation-item {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Khi mật khẩu thỏa mãn (thêm class qua JS của bạn) */
+.validation-item.valid {
+    color: #16169c;
+    font-weight: 600;
+}
+.validation-item.valid i {
+    color: #16169c;
+}
+
+/* --- Nút bấm Đăng ký --- */
+.btn-success {
+    background-color: #16169c !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 12px !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease !important;
+}
+
+/* --- email & send-code group (same as forgot.css) --- */
+.input-email-group {
+    display: flex !important;
+    flex-direction: column !important;
+    background: transparent !important;
+    border: none !important;
+    gap: 12px;
+}
+
+.input-email-group .form-control {
+    width: 100% !important;
+    height: 46px !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #eef2f6 !important;
+    border-radius: 0.75rem !important;
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease;
+}
+
+.input-email-group .form-control:focus {
+    border-color: #16169c !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 1px #16169c !important;
+}
+
+.btn-send-code {
+    width: 100% !important;
+    height: 42px !important;
+    background-color: #ffffff !important;
+    color: #16169c !important;
+    border: 1.5px solid #16169c !important;
+    border-radius: 0.75rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0 !important;
+}
+
+.btn-send-code:hover {
+    background-color: #16169c !important;
+    color: #ffffff !important;
+}
+
+/* --- ĐÃ SỬA LỖI Ở ĐÂY --- */
+/* Đổi tên class thành .otp-input để không dính vào các input thông thường của form */
+.otp-input {
+    height: 46px !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #eef2f6 !important;
+    border-radius: 0.75rem !important;
+    text-align: center !important;
+    letter-spacing: 4px !important;
+    font-family: 'Google Sans', Arial, sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.btn-success:disabled {
+    background-color: #cbd5e1 !important;
+    opacity: 0.6;
+}
+
+.btn-success:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+/* --- Gợi ý Username Badge --- */
+.badge.bg-secondary {
+    background-color: #eef2f6 !important;
+    color: #16169c !important;
+    border: 1px solid #dbeafe !important;
+    border-radius: 0.5rem;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.badge.bg-secondary:hover {
+    background-color: #16169c !important;
+    color: #fff !important;
+}
+.input-group .form-control-soft:focus {
+    box-shadow: none !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+}

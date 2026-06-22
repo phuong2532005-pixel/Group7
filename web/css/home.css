@@ -1,0 +1,311 @@
+
+
+/* --- 2. BỐ CỤC TRANG CHỦ & TIÊU ĐỀ --- */
+.home-section {
+    margin-bottom: 7rem;
+}
+
+.home-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #E0DCD3;
+    padding-bottom: 1.5rem;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+}
+
+.home-sub {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #7A7A7A;
+}
+
+.home-badge {
+    background: transparent;
+    color: #0f172a;
+    border: 1px solid #0f172a;
+    padding: 0.3rem 1.2rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 0;
+}
+
+/* --- 3. FIX LỖI SLIDER: ÉP CHẠY HÀNG NGANG CHUẨN 4 SẢN PHẨM --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    padding: 0 50px !important; /* Tạo khoảng trống 50px cho mũi tên */
+    box-sizing: border-box;
+}
+
+.swiper {
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.swiper-wrapper {
+    display: flex !important; /* Ép nằm ngang */
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+.swiper-slide {
+    flex-shrink: 0 !important;
+    height: auto !important;
+    width: calc(25% - 22.5px) !important; /* Chuẩn 4 sản phẩm */
+    margin-right: 30px !important;
+}
+
+/* Responsive cho điện thoại / Tablet */
+@media (max-width: 1024px) {
+    .swiper-slide { width: calc(33.333% - 20px) !important; margin-right: 30px !important; }
+}
+@media (max-width: 768px) {
+    .swiper-slide { width: calc(50% - 10px) !important; margin-right: 20px !important; }
+    .slider-container { padding: 0 35px !important; }
+}
+@media (max-width: 480px) {
+    .swiper-slide { width: 100% !important; margin-right: 0 !important; }
+    .slider-container { padding: 0 30px !important; }
+}
+
+/* --- 4. MŨI TÊN CHUYỂN SLIDE (ĐÃ FIX SẮC NÉT & NỔI BẬT) --- */
+.swiper-button-next, .swiper-button-prev {
+    position: absolute !important;
+    top: 40% !important; 
+    transform: translateY(-50%) !important;
+    margin-top: 0 !important;
+    z-index: 10 !important;
+    color: #0f172a !important;
+    
+    /* Thêm nền trắng mờ và bo tròn để mũi tên luôn nổi bật */
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    
+    width: 46px !important;
+    height: 46px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+/* Ép nét mũi tên to và đậm đà hơn */
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-weight: 900 !important; 
+    font-size: 1.3rem !important; 
+}
+
+.swiper-button-prev { left: 0 !important; }
+.swiper-button-next { right: 0 !important; }
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #9A6A46 !important;
+    background: #fff !important;
+    transform: translateY(-50%) scale(1.1) !important; /* Phóng to nhẹ */
+}
+
+/* Làm cho mũi tên bị vô hiệu hóa vẫn nhìn thấy rõ, không bị mờ tịt */
+.swiper-button-disabled {
+    opacity: 0.4 !important; /* Đã tăng từ 0.15 lên 0.4 */
+    pointer-events: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+
+/* --- 5. THẺ SẢN PHẨM (PRODUCT CARDS) --- */
+.home-card, .product-card {
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Ép tỷ lệ dọc 2:3 */
+.home-card a, .product-card a {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    background-color: #EFEFEF;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-card img, .product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    padding: 0 !important;
+    transition: transform 1.2s ease, filter 0.8s ease !important;
+}
+
+.home-card:hover img, .product-card:hover img {
+    transform: scale(1.05) !important;
+}
+
+.home-card a > div, .product-card a > div {
+    height: 100% !important;
+    width: 100% !important;
+    background: #EFEFEF !important;
+}
+
+.home-card .info, .product-card .info {
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.home-card .name, .product-card h4 a {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.home-card:hover .name, .product-card:hover h4 a {
+    color: #9A6A46;
+}
+
+.home-card .price, .product-card .price {
+    font-size: 1.1rem;
+    color: #7A7A7A;
+    font-weight: normal;
+}
+
+
+/* --- 6. PHẦN TẤT CẢ SẢN PHẨM & BỘ LỌC (MINIMALIST) --- */
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .list-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .check-section {
+        width: 250px; 
+        flex-shrink: 0;
+        position: sticky;
+        top: 100px;
+    }
+    #product-content > section {
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #E0DCD3;
+    padding-bottom: 1rem;
+    display: block;
+}
+
+.filter-panel { background: transparent; padding: 0; border: none; box-shadow: none;}
+.filter-title { display: none; }
+
+.filter-group { margin-bottom: 2rem; }
+
+.filter-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.filter-group input, .filter-group select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #E0DCD3;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.filter-group input:focus, .filter-group select:focus {
+    border-bottom-color: #0f172a;
+}
+
+.range-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-btn {
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    border-radius: 0;
+    padding: 1.2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: 1px solid #0f172a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: transparent;
+    color: #0f172a;
+}
+
+/* Lưới Sản phẩm tĩnh (bên dưới trang) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem 1.5rem;
+}
+@media (min-width: 576px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Phân trang tinh giản */
+.paging-container { margin-top: 5rem !important; border-top: 1px solid #E0DCD3; padding-top: 2rem; }
+.paging-info { font-style: italic; }
+
+.page-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #7A7A7A;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+.page-link.active {
+    color: #0f172a;
+    border-bottom: 2px solid #0f172a;
+    background: transparent;
+}
+.page-link:hover:not(.active) {
+    color: #9A6A46;
+    background: transparent;
+}

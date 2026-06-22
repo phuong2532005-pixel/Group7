@@ -1,0 +1,310 @@
+/* =========================================================
+   1. BỐ CỤC TRANG LỌC SẢN PHẨM (LAYOUT)
+========================================================== */
+.list-wrap {
+    max-width: 1280px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
+
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Chia 2 cột trên màn hình PC */
+@media (min-width: 1024px) {
+    .list-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .check-section {
+        width: 250px; 
+        flex-shrink: 0;
+        position: sticky;
+        top: 100px; /* Giữ bộ lọc đứng yên khi cuộn chuột */
+    }
+    .list-layout > section {
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   2. SIDEBAR BỘ LỌC (FILTER PANEL) - CHUẨN MINIMALIST
+========================================================== */
+.check-section {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+    display: block;
+    letter-spacing: -0.5px;
+}
+
+.filter-panel { 
+    background: transparent; 
+    padding: 0; 
+    border: none; 
+    box-shadow: none;
+}
+
+/* Ẩn chữ "Bộ lọc tìm kiếm" đi cho đỡ rối mắt */
+.filter-title { 
+    display: none; 
+} 
+
+.filter-group { 
+    margin-bottom: 2.5rem; 
+}
+
+/* Nhãn (Label) */
+.filter-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+/* Ô Nhập Liệu & Dropdown (Chỉ giữ nét gạch dưới) */
+.filter-group input[type="text"], 
+.filter-group select,
+.range-row input[type="number"] {
+    width: 100%;
+    background: transparent;
+    border: none; 
+    border-bottom: 1px solid #e2e8f0; 
+    border-radius: 0; 
+    padding: 0.5rem 0; 
+    font-size: 0.95rem;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-shadow: none;
+    appearance: none; 
+}
+
+/* Icon mũi tên chuẩn thời trang cho ô Danh Mục */
+.filter-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 1.2em;
+    padding-right: 1.5rem;
+    cursor: pointer;
+}
+
+/* Đậm đường viền dưới khi Focus */
+.filter-group input:focus, 
+.filter-group select:focus,
+.range-row input:focus {
+    border-bottom-color: #0f172a;
+}
+
+/* Placeholder in nghiêng mờ */
+.filter-group input::placeholder,
+.range-row input::placeholder {
+    color: #64748b;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.range-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Nút Bấm Áp Dụng */
+.filter-btn {
+    width: 100%;
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid #0f172a;
+    border-radius: 0; 
+    padding: 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.filter-btn:hover {
+    background: transparent;
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   3. LƯỚI SẢN PHẨM (PRODUCT GRID) - ĐỒNG BỘ VỚI HOME.CSS
+========================================================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 3rem 1.5rem;
+}
+
+.product-card {
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    transition: all 0.5s ease;
+}
+
+/* Ép khung ảnh chuẩn 2:3 */
+.product-card > a {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    background-color: #EFEFEF;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    padding: 0 !important;
+    transition: transform 1.2s ease, filter 0.8s ease !important;
+}
+
+.product-card:hover img {
+    transform: scale(1.05) !important;
+}
+
+.product-card a > div {
+    height: 100% !important;
+    width: 100% !important;
+    background: #EFEFEF !important;
+}
+
+/* Chữ căn giữa y như Home */
+.product-card .info {
+    padding: 1.5rem 0;
+    text-align: center; 
+}
+
+.product-card h4 {
+    margin: 0;
+}
+
+.product-card h4 a {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.product-card:hover h4 a {
+    color: #16169c; /* Nếu bạn chưa có biến accent thì nó sẽ mặc định lấy màu xanh Navy */
+}
+
+.product-card .price {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: normal;
+}
+
+.empty {
+    text-align: center;
+    padding: 4rem 0;
+    color: #64748b;
+    font-size: 1.1rem;
+    font-style: italic;
+    width: 100%;
+}
+
+
+/* =========================================================
+   4. PHÂN TRANG (PAGINATION) - NẰM NGANG CHUẨN MINIMALIST
+========================================================== */
+.paging-container { 
+    display: flex;
+    flex-direction: row;     
+    justify-content: center; 
+    align-items: center;
+    gap: 3rem;               
+    
+    margin-top: 5rem; 
+    border-top: 1px solid #e2e8f0; 
+    padding-top: 2.5rem; 
+}
+
+.paging-info { 
+    font-style: italic; 
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.paging-info strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.paging {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 0.5rem;         
+}
+
+.page-link {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.page-link.active {
+    color: #0f172a;
+    border-bottom: 2px solid #0f172a;
+    font-weight: 700;
+}
+
+.page-link:hover:not(.active) {
+    color: #0f172a;
+    transform: translateY(-2px); 
+}
+
+.page-dots {
+    color: #64748b;
+    padding: 0 0.5rem;
+    letter-spacing: 2px;
+}
+
+/* Fix phân trang cho điện thoại */
+@media (max-width: 576px) {
+    .paging-container {
+        flex-direction: column; 
+        gap: 1.5rem;
+    }
+}

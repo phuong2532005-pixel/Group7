@@ -1,0 +1,198 @@
+/* =========================================================
+   FORGOT / VERIFY EMAIL - COMPACT SOFT UI (HOÀN THIỆN)
+========================================================== */
+
+/* 1. Cấu trúc khung tổng thể */
+.login-box-limit {
+    width: 100%;
+    max-width: 420px; /* match register width */
+    margin: 40px auto; /* same as register */
+    min-height: 620px; /* force similar vertical size */
+}
+
+/* reduce space below heading */
+.login-card .card-body .text-center {
+    margin-bottom: 1.5rem !important;
+}
+
+/* ensure email placeholder not spaced oddly */
+.input-email-group .form-control::placeholder {
+    letter-spacing: normal !important;
+}
+/* also reset spacing when field contains actual text */
+.input-email-group .form-control {
+    letter-spacing: normal !important;
+}
+
+.login-card {
+    border: none !important; 
+    border-radius: 2rem !important; 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
+    background: #ffffff !important;
+    padding: 20px !important;
+}
+
+/* Nút quay lại phía góc */
+.back-arrow-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    text-decoration: none !important;
+}
+
+.back-arrow-btn:hover {
+    color: #16169c;
+}
+
+.login-card h4 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #16169c !important;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* 2. Nhãn (Label) */
+label.small {
+    font-size: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* 3. TÁCH BIỆT PHẦN NHẬP EMAIL VÀ NÚT GỬI MÃ */
+
+/* Biến input-group thành một khối dọc để tách input và button */
+.input-email-group {
+    display: flex !important;
+    flex-direction: column !important; /* Xếp chồng hàng dọc */
+    background: transparent !important;
+    border: none !important;
+    gap: 12px; /* Khoảng cách giữa ô nhập và nút gửi */
+}
+
+/* Style cho ô nhập Email */
+.input-email-group .form-control {
+    width: 100% !important;
+    height: 46px !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #eef2f6 !important;
+    border-radius: 0.75rem !important;
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease;
+}
+
+.input-email-group .form-control:focus {
+    border-color: #16169c !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 1px #16169c !important;
+}
+
+/* Style cho nút GỬI MÃ (Tách biệt hoàn toàn) */
+.btn-send-code {
+    width: 100% !important; /* Dàn hàng ngang full chiều rộng */
+    height: 42px !important;
+    background-color: #ffffff !important;
+    color: #16169c !important;
+    border: 1.5px solid #16169c !important; /* Viền xanh Navy rỗng nền */
+    border-radius: 0.75rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0 !important;
+}
+
+.btn-send-code:hover {
+    background-color: #16169c !important;
+    color: #ffffff !important;
+}
+
+/* 4. Ô NHẬP MÃ OTP */
+/* apply to both mb-4 and mb-3 container so forgot and verify pages match */
+.mb-4 .form-control,
+.mb-3 .form-control {
+    height: 46px !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #eef2f6 !important;
+    border-radius: 0.75rem !important;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.mb-4 .form-control:focus {
+    border-color: #16169c !important;
+    background-color: #fff !important;
+}
+
+/* 5. NÚT TIẾP THEO (NÚT CHỐT) */
+.btn-login-orange {
+    background-color: #16169c !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 14px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.btn-login-orange:hover {
+    opacity: 0.9;
+}
+
+/* 6. THÔNG BÁO LỖI & THÀNH CÔNG */
+.error-box {
+    background: #fff2f0 !important;
+    color: #ef4444 !important;
+    border: 1px solid #ffccc7 !important;
+    border-radius: 0.75rem !important;
+    padding: 10px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tự ẩn nếu không có nội dung lỗi */
+.error-box:empty, .error-box span:empty {
+    display: none !important;
+}
+
+.alert-success {
+    background-color: #f0fdf4 !important;
+    color: #16a34a !important;
+    border: 1px solid #bbf7d0 !important;
+    border-radius: 0.75rem !important;
+    font-size: 0.85rem !important;
+}
+
+/* 7. ĐẾM NGƯỢC (COUNTDOWN) */
+#countdown-wrap {
+    margin-top: 10px;
+}
+
+#countdown-wrap small {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.5px;
+    color: #ef4444 !important;
+}

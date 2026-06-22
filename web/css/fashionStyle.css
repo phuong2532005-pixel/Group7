@@ -1,0 +1,183 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+
+/* --- 1. BIẾN MÀU SẮC & FONT CHỮ --- */
+:root {
+    /* --bg-color: #FAF9F6; */       /* Trắng ngà ngọc trai */
+    /* --text-dark: #121212; */      /* Đen tuyền quyền lực */
+    /* --text-light: #7A7A7A; */     /* Xám thanh lịch */
+    /* --accent: #9A6A46; */         /* Nâu lạc đà (Camel) */
+    /* --border-color: #E0DCD3; */
+    /* --transition-slow: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); */
+    /* --transition-fast: all 0.3s ease; */
+    /* --bs-border-radius: 0; */
+    /* --bs-border-radius-sm: 0; */
+    /* --bs-border-radius-lg: 0; */
+    /* --bs-border-radius-xl: 0; */
+    /* --bs-border-radius-xxl: 0; */
+    /* --bs-border-radius-pill: 0; */
+}
+
+body {
+    font-family: 'Google Sans Text', 'Inter', sans-serif;
+    background-color: #FAF9F6;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, .home-title, .section-title {
+    font-family: 'Google Sans Text', 'Inter', sans-serif !important;
+}
+
+.home-shell, .list-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.flash {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    color: #0f172a;
+    padding: 0.9rem 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    font-size: 0.92rem;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    z-index: 9999;
+    backdrop-filter: blur(12px);
+    min-width: 240px;
+    text-align: center;
+    
+    /* Animation chạy tổng cộng 3 giây, sau đó giữ nguyên trạng thái mờ đi (forwards) */
+    animation: flashInOut 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    
+    /* Thêm dòng này để khi thông báo mờ đi, người dùng không bấm nhầm vào nó */
+    pointer-events: none; 
+}
+
+/* Định nghĩa hiệu ứng xuất hiện và biến mất */
+@keyframes flashInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-12px) scale(0.98);
+    }
+    10% { 
+        /* Giai đoạn XUẤT HIỆN NHANH: Chỉ mất 10% thời gian (0.3s) để hiện rõ */
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    80% { 
+        /* Giai đoạn ĐỨNG YÊN: Giữ nguyên trạng thái hiển thị cho người dùng đọc (từ 0.3s đến 2.4s) */
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% { 
+        /* Giai đoạn BIẾN MẤT NHANH: Mờ dần và trượt nhẹ lên trên */
+        opacity: 0;
+        transform: translateX(-50%) translateY(-12px) scale(0.98);
+        visibility: hidden;
+    }
+}
+
+/* =========================================================
+   GLOBAL OVERRIDE - REMOVE ALL ROUNDED CORNERS
+========================================================== */
+.rounded,
+.rounded-0,
+.rounded-1,
+.rounded-2,
+.rounded-3,
+.rounded-4,
+.rounded-5,
+.rounded-top,
+.rounded-bottom,
+.rounded-start,
+.rounded-end,
+.rounded-circle,
+.rounded-pill,
+.btn,
+.form-control,
+.form-select,
+.form-check-input,
+.input-group-text,
+.card,
+.modal-content,
+.dropdown-menu,
+.alert,
+.badge,
+.page-link,
+.pagination,
+.nav,
+.nav-link,
+.accordion,
+.accordion-item,
+.accordion-button,
+.list-group-item,
+.table-responsive,
+details,
+summary,
+img,
+video,
+iframe,
+.flash {
+    border-radius: 0 !important;
+}
+
+/* =========================================================
+   DATA ENTRY FIELDS - ALWAYS SQUARE CORNERS
+========================================================== */
+body input,
+body select,
+body textarea,
+body .form-control,
+body .form-select,
+body .input-group-text,
+body .input-group .form-control,
+body .input-group .form-select,
+body .input-group .btn,
+body .table .form-control,
+body .table .form-select,
+body .card .form-control,
+body .card .form-select,
+body .modal .form-control,
+body .modal .form-select,
+body .was-validated .form-control:valid,
+body .was-validated .form-control:invalid,
+body .was-validated .form-select:valid,
+body .was-validated .form-select:invalid,
+body .form-control.is-valid,
+body .form-control.is-invalid,
+body .form-select.is-valid,
+body .form-select.is-invalid {
+    border-radius: 0 !important;
+}
+
+/* Extra priority for login/register pages */
+body .login-card input,
+body .login-card select,
+body .login-card textarea,
+body .login-card .form-control,
+body .login-card .form-select,
+body .login-card .input-group-text,
+body .login-card .input-group .form-control,
+body .login-card .input-group .form-select,
+body .login-card .input-group .btn,
+body .login-box-limit input,
+body .login-box-limit select,
+body .login-box-limit textarea,
+body .login-box-limit .form-control,
+body .login-box-limit .form-select,
+body .login-box-limit .input-group-text,
+body .login-box-limit .input-group .form-control,
+body .login-box-limit .input-group .form-select,
+body .login-box-limit .input-group .btn {
+    border-radius: 0 !important;
+}

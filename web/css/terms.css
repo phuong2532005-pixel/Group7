@@ -1,0 +1,113 @@
+/* ==========================================================================
+   TÙY CHỈNH TRANG ĐIỀU KHOẢN SỬ DỤNG (LEGAL DOCUMENT UI)
+   ========================================================================== */
+
+/* 1. Khung chứa nội dung (Card) */
+.container.my-5 .card {
+    border: none;
+    border-radius: 24px; /* Bo góc lớn tạo cảm giác hiện đại, thân thiện */
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04);
+}
+
+.container.my-5 .card-body {
+    padding: 4rem 5rem; /* Không gian thở (whitespace) rộng rãi */
+}
+
+/* 2. Tiêu đề chính của trang (H1) */
+.container.my-5 h1.mb-4 {
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem !important;
+}
+
+/* 3. Khung nội dung văn bản (#termsContent) */
+#termsContent {
+    color: #475569; /* Xám xanh dịu mắt, tốt hơn màu đen tuyền khi đọc văn bản dài */
+    font-size: 1.05rem;
+    line-height: 1.85; /* Giãn dòng rộng giúp mắt dễ quét thông tin */
+}
+
+/* Các đoạn văn */
+#termsContent p {
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Các Tiêu đề mục (H4) */
+#termsContent h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0; /* Đường kẻ chia cách nhẹ nhàng */
+    position: relative;
+}
+
+/* Điểm nhấn nhỏ đầu mỗi tiêu đề mục */
+#termsContent h4::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #3b82f6; /* Màu xanh thương hiệu */
+}
+
+/* Bỏ margin top cho tiêu đề đầu tiên để tránh bị dư khoảng trống */
+#termsContent h4:first-child {
+    margin-top: 0;
+}
+
+/* 5. Tùy chỉnh Danh sách (UL / LI) */
+#termsContent ul {
+    list-style: none; /* Tắt dấu chấm mặc định xấu xí */
+    padding-left: 0;
+    margin-bottom: 2rem;
+    background: #f8fafc; /* Nền xám nhạt làm nổi bật khối danh sách */
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+}
+
+#termsContent li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 0.8rem;
+}
+
+#termsContent li:last-child {
+    margin-bottom: 0;
+}
+
+/* Dấu checkmark (✓) tùy chỉnh cho các mục danh sách */
+#termsContent li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #3b82f6;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE (Tối ưu cho màn hình nhỏ)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container.my-5 .card-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    .container.my-5 h1.mb-4 {
+        font-size: 2rem;
+    }
+
+    #termsContent ul {
+        padding: 1.2rem 1rem;
+    }
+}

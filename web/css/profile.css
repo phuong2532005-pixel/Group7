@@ -1,0 +1,719 @@
+/* ==========================================================================
+   FASHION STORE - HỒ SƠ CÁ NHÂN (PROFILE UI)
+   ========================================================================== */
+
+.card-body{
+    margin: 10px;
+}
+/* 1. Khung tổng thể */
+.profile-shell {
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04) !important; /* Ghi đè shadow mặc định của Bootstrap */
+}
+
+.profile-title {
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+
+/* 2. Bố cục Chia cột (Sidebar & Main) */
+.profile-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Cột Menu bên trái */
+.profile-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid #f1f5f9;
+    padding-right: 20px;
+}
+
+/* Nút Menu (Tab) */
+.profile-nav-btn {
+    text-align: left;
+    padding: 14px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #64748b;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.profile-nav-btn i {
+    width: 24px; /* Cố định chiều rộng icon để chữ thẳng hàng */
+    font-size: 1.1rem;
+}
+
+.profile-nav-btn:hover {
+    background: #f8fafc;
+    color: #0f172a;
+    transform: translateX(4px);
+}
+
+.profile-nav-btn.active {
+    background: #eff6ff;
+    color: #3b82f6;
+    
+}
+
+/* Cột Nội dung bên phải */
+.profile-main {
+    flex-grow: 1;
+    min-width: 0; /* Ngăn chặn tràn nội dung */
+}
+
+/* Ẩn/Hiện nội dung các phần (Chuyển Tab) */
+.profile-section {
+    display: none;
+    animation: fadeInTab 0.4s ease forwards;
+}
+
+.profile-section.active {
+    display: block;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Tùy chỉnh Ô nhập liệu (Forms) */
+.form-control-soft {
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: #334155;
+    background-color: #f8fafc;
+    transition: all 0.2s;
+}
+
+.form-control-soft:focus {
+    background-color: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+.form-control-soft:disabled,
+.form-control-soft[readonly] {
+    background-color: #e2e8f0;
+    cursor: not-allowed;
+}
+
+/* Nút bấm (Button) */
+.btn-pro {
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-pro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Tùy chỉnh Khối Địa chỉ Giao hàng */
+.address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address-add-btn {
+    background: #eff6ff;
+    color: #3b82f6;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.address-add-btn:hover {
+    background: #dbeafe;
+}
+
+.address-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background: #ffffff;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.address-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border-color: #cbd5e1;
+}
+
+.address-contact strong {
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.address-phone {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.address-line {
+    color: #475569;
+    margin-top: 6px;
+}
+
+.address-default {
+    display: inline-block;
+    background: #fef2f2;
+    color: #ef4444;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 10px;
+    border: 1px solid #fecaca;
+}
+
+.address-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.address-link-btn {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.address-link-btn:hover { text-decoration: underline; }
+
+.address-default-btn {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.address-default-btn:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.address-default-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 5. Tùy chỉnh danh sách Điều kiện Mật khẩu */
+.validation-list {
+    list-style: none;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin: 0;
+}
+
+.validation-item {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.validation-item:last-child { margin-bottom: 0; }
+
+.validation-item.valid {
+    color: #10b981; /* Màu xanh lá khi đạt yêu cầu */
+}
+
+.validation-item.valid i {
+    color: #10b981;
+}
+
+.validation-item.valid i::before {
+    content: "\f058"; /* Đổi icon thành Check-circle */
+    font-weight: 900;
+}
+
+/* ==========================================================================
+   RESPONSIVE (Cho màn hình Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .profile-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .profile-sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Cho phép vuốt ngang các tab trên mobile */
+        border-right: none;
+        border-bottom: 1px solid #f1f5f9;
+        padding-right: 0;
+        padding-bottom: 10px;
+    }
+    
+    .profile-nav-btn {
+        white-space: nowrap;
+        padding: 10px 16px;
+    }
+    
+    .profile-nav-btn.active {
+        box-shadow: inset 0 -3px 0 #3b82f6; /* Đổi vạch xanh xuống dưới đáy tab */
+        background: transparent;
+    }
+
+    .address-item {
+        flex-direction: column;
+    }
+
+    .address-actions {
+        align-items: flex-start;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed #e2e8f0;
+    }
+}
+/* --- CSS Cho phần thông tin chung (Profile Form) --- */
+
+/* Tiêu đề "Thông tin chung" */
+.profile-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; /* Thêm đường kẻ dưới cho sang */
+}
+
+/* Khung chứa các dòng nhập liệu */
+.profile-grid {
+    display: flex;
+    flex-direction: column; /* Xếp các trường từ trên xuống dưới */
+    gap: 20px; /* Khoảng cách đều nhau giữa các trường (Họ tên, SĐT, Email) */
+    margin-bottom: 30px; /* Khoảng cách với nút Lưu */
+}
+
+/* Từng dòng nhập liệu (gồm cả Label và Input) */
+.profile-field {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 15px; /* Khoảng cách giữa chữ và ô nhập */
+}
+
+/* Chữ nhãn (Họ và tên, Số điện thoại...) */
+.profile-field label {
+    flex: 0 0 130px; /* Cố định chiều rộng nhãn để các ô input thẳng hàng với nhau */
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0; 
+}
+
+/* Khung input */
+.form-control-soft {
+    flex: 1; /* Ô input tự động giãn ra chiếm nốt không gian còn lại */
+    max-width: 290px !important; /* Giới hạn độ dài để ô không bị kéo dài hết cả màn hình */
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Bo góc mềm mại */
+    background-color: #f8f9fa; /* Màu nền hơi xám nhẹ */
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi bấm vào ô input */
+.form-control-soft:focus {
+    background-color: #ffffff;
+    border-color: #86b7fe;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Viền sáng màu xanh chuẩn Bootstrap */
+}
+
+/* Nút Cập nhật thông tin */
+.profile-save-btn {
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    background-color: #0d6efd; /* Nền xanh */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profile-save-btn:hover {
+    background-color: #0b5ed7; /* Xanh đậm hơn khi di chuột vào */
+}
+
+/* --- CSS Cho phần Thêm Địa Chỉ --- */
+
+/* Mở rộng khung form và làm mềm các góc */
+#addAddressForm {
+    max-width: 650px; /* Giới hạn chiều rộng để form không bị bành trướng ra toàn màn hình */
+    background-color: #fcfcfc;
+    border: 1px solid #eaedf1 !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    margin-top: 15px;
+}
+
+/* Đưa Label và Input nằm ngang hàng nhau giống phần Thông tin chung */
+#addAddressForm .mb-2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px !important;
+}
+
+/* Căn chỉnh lại các nhãn (Địa chỉ, Tỉnh/Thành...) */
+#addAddressForm .mb-2 label {
+    flex: 0 0 130px; /* Chiều rộng bằng đúng phần Thông tin chung để 2 bên thẳng hàng tăm tắp */
+    margin-bottom: 0 !important;
+    font-weight: 500 !important;
+    color: #495057;
+    font-size: 15px;
+}
+
+/* Mở rộng các ô nhập liệu và dropdown chọn tỉnh thành */
+#addAddressForm .form-control-soft {
+    flex: 1;
+    max-width: 100%; /* Ghi đè lại giới hạn 400px cũ, cho phép ô giãn hết cỡ trong form */
+}
+
+/* Chỉnh lại phần Checkbox "Đặt làm địa chỉ mặc định" */
+#addAddressForm .form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Đẩy lùi vào 145px (130px chữ + 15px khoảng cách) để checkbox thẳng hàng với các ô input ở trên */
+    margin-left: 145px; 
+    margin-bottom: 25px !important;
+}
+
+#addAddressForm .form-check-input {
+    margin-top: 0;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+#addAddressForm .form-check-label {
+    font-size: 15px;
+    color: #495057;
+    cursor: pointer;
+}
+
+/* Chỉnh lại nút "Thêm địa chỉ" */
+#addAddressForm button[type="submit"] {
+    max-width: 200px;
+    margin-left: 145px; /* Tiếp tục căn thẳng hàng với input */
+    border-radius: 8px;
+    padding: 10px 15px;
+    background-color: #0d6efd;
+    transition: all 0.2s ease;
+}
+
+#addAddressForm button[type="submit"]:hover {
+    background-color: #0b5ed7;
+}
+/* --- Tiêu đề chính của trang (Hồ sơ cá nhân) --- */
+.main-profile-title {
+    text-align: center; /* Căn ra chính giữa */
+    font-size: 1.8rem; /* Cho chữ to lên (khoảng 28px) */
+    font-weight: 700; /* In đậm hơn để nổi bật */
+    color: #2c3e50; /* Đổi sang màu xám đen đậm cho sang */
+    letter-spacing: 1.5px; /* Giãn cách các chữ cái ra một xíu cho đẹp mắt */
+    margin-bottom: 30px !important; /* Tạo khoảng cách thoáng với phần bên dưới */
+}
+/* --- Căn chỉnh toàn bộ khối Card (Hồ sơ cá nhân) --- */
+/* --- Căn chỉnh toàn bộ khối Card (Hồ sơ cá nhân) --- */
+.profile-shell {
+    max-width: 950px !important; /* Chiều ngang vừa phải, không quá to không quá nhỏ */
+    margin-top: 40px !important; 
+    margin-bottom: 50px !important;
+    margin-left: auto !important; /* Cưỡng chế đẩy vào giữa từ bên trái */
+    margin-right: auto !important; /* Cưỡng chế đẩy vào giữa từ bên phải */
+    border-radius: 16px; 
+    overflow: hidden; 
+}
+/* Ép thẻ body cao bằng 100% màn hình và đẩy footer xuống đáy */
+body {
+ 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Chiều cao tối thiểu bằng 100% màn hình */
+}
+
+/* Đảm bảo phần nội dung chính sẽ tự động giãn ra chiếm hết khoảng trống */
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+/* ==========================================================================
+   FINAL OVERRIDES - PROFILE LAYOUT & PASSWORD FLOW
+   ========================================================================== */
+
+.profile-shell {
+    max-width: 980px !important;
+    margin: 24px auto 56px !important;
+    overflow: visible;
+}
+
+.profile-layout {
+    gap: 32px;
+    align-items: stretch;
+}
+
+.profile-sidebar {
+    width: 250px;
+    justify-content: flex-start;
+    padding-right: 14px;
+}
+
+.profile-nav-btn {
+    width: 100%;
+    min-height: 52px;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 14px 18px;
+    transform: none !important;
+}
+
+.profile-nav-btn:hover {
+    transform: none !important;
+    background: #f8fafc;
+}
+
+.profile-nav-btn.active {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+.profile-nav-btn i {
+    width: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.profile-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-bottom: 8px;
+}
+
+.profile-inline-alert {
+    margin-bottom: 18px;
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.profile-inline-alert-success {
+    background: #effaf3;
+    color: #166534;
+    border: 1px solid #ccefd8;
+}
+
+.profile-inline-alert-error {
+    background: #fff3f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.profile-form,
+.password-panel,
+.password-verify-card {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.profile-grid {
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.profile-field {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+}
+
+.profile-field label {
+    font-weight: 600;
+    color: #475569;
+}
+
+.form-control-soft {
+    width: 100%;
+    max-width: none;
+}
+
+.profile-save-btn {
+    min-width: 190px;
+}
+
+.password-title {
+    margin-bottom: 22px;
+}
+
+.password-form-grid {
+    display: grid;
+    gap: 16px;
+    max-width: 360px !important;
+}
+
+.password-field-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.password-input-group {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+    padding: 0 10px !important;
+}
+
+.password-input-group:focus-within {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
+    background: #ffffff !important;
+}
+
+.password-input-group .form-control-soft {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 12px 8px;
+}
+
+.password-input-group .form-control-soft:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.password-validation-list {
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+}
+
+.password-submit-btn,
+.password-confirm-btn {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.password-submit-btn:hover,
+.password-confirm-btn:hover {
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.16);
+}
+
+.password-submit-btn:disabled {
+    background: #cbd5e1;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.password-verify-card {
+    margin-top: 20px;
+    background: linear-gradient(180deg, #f8fbff, #ffffff);
+}
+
+.password-verify-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.password-verify-text {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.password-verify-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+}
+
+.password-otp-input {
+    min-width: 0;
+}
+
+.password-confirm-btn {
+    padding: 12px 22px;
+}
+
+@media (max-width: 768px) {
+    .profile-shell {
+        margin: 12px auto 32px !important;
+    }
+
+    .profile-main,
+    .profile-sidebar {
+        width: 100%;
+    }
+
+    .profile-field {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .password-verify-row {
+        grid-template-columns: 1fr;
+    }
+
+    .password-confirm-btn,
+    .profile-save-btn {
+        width: 100%;
+    }
+}
+

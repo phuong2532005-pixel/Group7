@@ -1,0 +1,145 @@
+/* ===== Dashboard Layout & General ===== */
+:root {
+    /* --primary-color: #4e73df; */
+    /* --success-color: #1cc88a; */
+    /* --info-color: #36b9cc; */
+    /* --bg-light: #f8f9fc; */
+    /* --text-main: #5a5c69; */
+}
+
+body.admin-dashboard-page {
+    background-color: #f8f9fc;
+    color: #5a5c69;
+    font-family: 'Inter', sans-serif;
+}
+
+.dashboard-main {
+    margin-top: 20px;
+}
+
+/* ===== Card Styling (Gọn gàng & Hiện đại) ===== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    margin-bottom: 24px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-title {
+    color: white !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+/* Chỉ số quan trọng (Metric Cards) */
+.metric-card .card-text {
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ===== Chart Area (Thoáng đãng) ===== */
+canvas {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Tinh chỉnh chiều cao cho các biểu đồ nhỏ */
+.chart-container-small {
+    position: relative;
+    height: 250px; /* Tăng nhẹ để không bị quá dẹt */
+    width: 100%;
+}
+
+/* ===== Form Controls (Dễ bấm) ===== */
+.form-select, .form-control {
+    border-radius: 8px;
+    border: 1px solid #d1d3e2;
+    padding: 0.6rem;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #bac8f3;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    box-shadow: 0 4px 12px rgba(78, 115, 223, 0.3);
+}
+
+/* ===== Table Styling (Chuyên nghiệp) ===== */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background-color: #f8f9fc;
+    color: #5a5c69;
+    font-weight: 700;
+    border-top: none;
+    border-bottom: 2px solid #e3e6f0;
+    padding: 12px;
+}
+
+.table tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.table tbody tr:hover {
+    background-color: #f1f3f9 !important;
+}
+
+/* Custom Scrollbar cho bảng dài */
+.table-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d1d3e2 transparent;
+}
+
+.table-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background-color: #d1d3e2;
+    border-radius: 10px;
+}
+
+/* ===== Responsive Fixes ===== */
+@media (max-width: 768px) {
+    .row > * {
+        margin-bottom: 15px;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+}

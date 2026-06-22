@@ -1,0 +1,169 @@
+/* =========================================================
+   NEW PRODUCT FORM - MINIMALIST SOFT UI
+========================================================== */
+
+/* 1. Container & Card */
+.container.mt-5 {
+    max-width: 1100px;
+    margin-bottom: 50px;
+}
+
+.card.shadow {
+    border: none !important;
+    border-radius: 2rem !important; /* Bo tròn lớn đồng bộ hệ thống */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05) !important;
+    padding: 20px;
+}
+
+.card-body h4 {
+    color: #16169c;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px !important;
+}
+
+/* 2. Form Sections */
+.form-section {
+    background: #f8fafc;
+    border-radius: 1.5rem;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #eef2f6;
+}
+
+.form-section h5 {
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-section h5 i {
+    color: #16169c;
+}
+
+/* 3. Input & Labels */
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-left: 5px;
+}
+
+.form-control, .form-select {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0.75rem !important;
+    padding: 12px 15px !important;
+    font-size: 0.9rem;
+    background-color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #16169c !important;
+    box-shadow: 0 0 0 3px rgba(22, 22, 156, 0.08) !important;
+    outline: none;
+}
+
+textarea.form-control {
+    border-radius: 1rem !important;
+}
+
+/* 4. Variant Items (Biến thể) */
+.variant-item {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+/* 5. Buttons */
+.btn-primary {
+    background-color: #16169c !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 12px 25px !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0d0d7a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(22, 22, 156, 0.2);
+}
+
+.btn-outline-primary {
+    border-color: #16169c !important;
+    color: #16169c !important;
+    border-radius: 0.75rem !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #16169c !important;
+    color: #fff !important;
+}
+
+.btn-outline-success {
+    border-radius: 0.75rem !important;
+    border-style: dashed !important; /* Tạo hiệu ứng nút "Thêm" mượt mà */
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-outline-danger {
+    border-radius: 0.7rem !important;
+    font-size: 0.8rem;
+}
+
+/* 6. Modals Custom */
+.modal-content {
+    border: none !important;
+    border-radius: 1.5rem !important;
+    padding: 10px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* 7. Input Group Fix (Nút Plus cạnh Select) */
+.input-group .btn {
+    border-top-right-radius: 0.75rem !important;
+    border-bottom-right-radius: 0.75rem !important;
+    z-index: 0;
+}
+
+.input-group .form-control {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* 8. Alert Fix */
+.alert {
+    border-radius: 1rem !important;
+    border: none;
+    font-size: 0.9rem;
+}
+
+/* 9. Action area & validation message */
+.form-actions {
+    width: 100%;
+}
+
+#priceValidationMessage {
+    display: block;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}

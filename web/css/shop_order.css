@@ -1,0 +1,150 @@
+/* =========================================================
+   SHOP ORDERS MANAGEMENT - COMPACT SOFT UI (OPTIMIZED)
+========================================================== */
+
+/* 1. Không gian chung */
+.shop-orders-page {
+    max-width: 1300px; /* Tăng nhẹ chiều rộng để bảng không bị chật */
+    margin-bottom: 50px;
+}
+
+.shop-orders-page h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #16169c;
+    letter-spacing: -0.5px;
+    margin-bottom: 25px;
+}
+
+/* 2. Bộ lọc (Filter & Sort) - Giữ nguyên */
+.shop-orders-page form.row {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem !important;
+    border: 1px solid #f1f5f9;
+}
+
+/* 3. Bảng đơn hàng - CHỈNH SỬA TIÊU ĐỀ */
+.table {
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: none !important;
+}
+.table thead th {
+    background-color: #f8fafc;
+    color: #16169c; /* Đổi sang màu Navy cho đồng bộ tiêu đề */
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 15px;
+    
+    /* Căn giữa và cấm xuống dòng */
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    /* KẺ NGANG & KẺ DỌC CHO TIÊU ĐỀ */
+    border-right: 1px solid #000000 !important; /* Kẻ dọc đen */
+    border-bottom: 1px solid #000000 !important; /* Kẻ ngang đen dưới tiêu đề */
+}
+.table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    color: #0f172a;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    /* MỚI: Nội dung các cột (trừ sản phẩm) nên căn giữa cho đẹp */
+    text-align: center;
+}
+
+/* Riêng cột Khách hàng và Danh sách sản phẩm nên căn trái để dễ đọc */
+.table tbody td:nth-child(2),
+.table tbody td:nth-child(4) {
+    text-align: left;
+}
+
+/* Giới hạn độ rộng cột sản phẩm để không chiếm hết chỗ */
+.table td:nth-child(4) {
+    min-width: 250px;
+}
+
+/* 4. Trạng thái đơn hàng (Badges) */
+.table td:nth-child(7) {
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #16169c;
+}
+
+/* 5. Sản phẩm trong đơn (List) */
+.table ul {
+    list-style: none;
+    padding-left: 0 !important;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.table ul li {
+    padding: 3px 0;
+    color: #475569;
+    border-bottom: 1px dashed #f1f5f9;
+}
+
+.table ul li:last-child {
+    border-bottom: none;
+}
+
+/* 6. Nút hành động và Phân trang (Giữ nguyên đang đẹp) */
+.btn-sm {
+    border-radius: 0.5rem !important;
+    padding: 6px 12px !important;
+    font-weight: 600;
+    font-size: 0.75rem !important;
+    white-space: nowrap; /* Cấm nút bị rớt chữ xuống dòng */
+}
+
+.btn-primary {
+    background-color: #16169c !important;
+}
+.btn-warning {
+    background-color: #f59e0b !important;
+    color: white !important;
+}
+
+.paging-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.paging {
+    display: flex !important;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    background: #f1f5f9 !important;
+    border-radius: 10px !important;
+    color: #64748b !important;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+.page-link.active {
+    background: #16169c !important;
+    color: #ffffff !important;
+}

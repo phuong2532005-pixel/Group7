@@ -1,0 +1,280 @@
+/* =========================================
+   Layout Header Tổng Thể
+   ========================================= */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* =========================================
+   Phần Trái: Logo & Menu
+   ========================================= */
+.header-left {
+    flex: 0 0 auto; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    color: #0f172a;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-highlight {
+    color: #16169c;
+}
+
+.nav-link i.fa-chevron-down {
+    font-size: 12px;
+}
+
+/* =========================================
+   Menu Đa Cấp (Dropdowns)
+   ========================================= */
+.sub-menu, .sub-menu-level2 {
+    position: absolute;
+    background: #ffffff;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Dropdown cấp 1 */
+.sub-menu {
+    top: 100%;
+    left: 0;
+}
+
+/* Dropdown cấp 2 */
+.sub-menu-level2 {
+    top: -10px;
+    left: 100%;
+    margin-left: 2px;
+}
+
+/* Hiển thị menu khi Hover */
+.nav-item:hover > .sub-menu,
+.has-child:hover > .sub-menu-level2 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.has-child {
+    position: relative;
+}
+
+.sub-menu a, .sub-menu-level2 a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sub-menu a:hover, .sub-menu-level2 a:hover {
+    background-color: #f1f5f9;
+    color: #16169c;
+}
+
+.arrow-right {
+    font-size: 10px;
+    color: #64748b;
+}
+
+/* =========================================
+   Phần Giữa: Thanh Tìm Kiếm
+   ========================================= */
+/* =========================================
+   Phần Giữa: Thanh Tìm Kiếm
+   ========================================= */
+.header-center {
+    /* Cho phần search linh hoạt co giãn chiếm hết chỗ trống còn lại */
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    padding: 0 20px;
+}
+
+/* Thẻ bọc ngoài thanh search */
+.search-box-large {
+    position: relative; /* CỰC KỲ QUAN TRỌNG: Làm gốc tọa độ cho kính lúp */
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ô nhập liệu */
+.search-box-large input {
+    width: 100%;
+    /* padding bên phải (45px) phải to hơn kích thước nút kính lúp để chữ không bị chèn lên icon */
+    padding: 12px 45px 12px 20px; 
+    border-radius: 50px;
+    border: none;
+    background-color: #f1f5f9;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ép padding không làm phình chiều rộng */
+}
+
+.search-box-large input:focus {
+    box-shadow: 0 0 0 2px #16169c;
+    background-color: #ffffff;
+}
+
+/* Nút kính lúp */
+.search-btn-large {
+    position: absolute; /* Ép nút nổi lên trên ô input */
+    right: 15px;        /* Cách lề phải của ô input đúng 15px */
+    top: 50%;           /* Đẩy xuống giữa */
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc tuyệt đối */
+    
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.search-btn-large:hover {
+    color: #16169c;
+}
+/* =========================================
+   Phần Phải: Các Nút & Icon (User, Cart, Login)
+   ========================================= */
+.header-right {
+   flex: 0 0 auto; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 12px;
+}
+
+.header-user {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    margin-right: 10px;
+}
+
+.icon-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background-color: #f1f5f9;
+    color: #16169c;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -2px;       /* Dịch lên trên một chút */
+    right: -6px;     /* Dịch hẳn ra bên phải (chỉnh số âm lớn hơn nếu muốn ra xa hơn) */
+    background-color: #16169c;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    
+    /* Gò cứng chiều rộng và chiều cao bằng nhau để tạo độ tròn hoàn hảo */
+    width: 18px;     
+    height: 18px;    
+    border-radius: 50%; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0;      /* Xóa padding để khung không bị kéo giãn ngang */
+    border: 2px solid #ffffff;
+    
+    /* Đảm bảo chữ số nằm chính giữa tâm */
+    line-height: 1;
+    box-sizing: content-box; 
+}
+.nav-pill {
+    padding: 8px 20px;
+    background-color: #16169c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-pill:hover {
+    background-color: #0e0e7a;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}

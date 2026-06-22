@@ -1,0 +1,20 @@
+# IntelliJ
+.idea/
+*.iml
+
+# NetBeans private config
+nbproject/private/
+
+# Build output
+build/
+dist/
+target/
+*.class
+
+# Coverage / temp
+.jacocobrad/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

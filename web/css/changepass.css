@@ -1,0 +1,59 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 3, 2026, 12:06:57 PM
+    Author     : ADMIN
+*/
+
+/* --- CSS CHO TRANG ĐẶT LẠI MẬT KHẨU --- */
+
+/* 1. Danh sách kiểm tra (Checklist) */
+.validation-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    font-size: 0.85rem;
+}
+
+.validation-item {
+    color: #adb5bd; /* Màu xám khi chưa đạt */
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    transition: all 0.3s ease;
+}
+
+.validation-item i {
+    font-size: 14px;
+}
+
+/* Khi quy tắc ĐÚNG (Thêm class này bằng JS) */
+.validation-item.valid {
+    color: #198754; /* Màu xanh lá */
+    font-weight: 600;
+}
+
+/* 2. Style ô input mềm (giống ảnh mẫu) */
+.form-control-soft {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 12px;
+}
+.form-control-soft:focus {
+    background-color: #fff;
+    border-color: #ee4d2d; /* Viền cam khi focus */
+    box-shadow: none;
+}
+body {
+    background-color: #f0f0f0;
+    font-family: Arial;
+}
+
+.form-container {
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+}
